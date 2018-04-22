@@ -1,32 +1,48 @@
-<%= form_with(model: fake_api, local: true) do |form| %>
-  <% if fake_api.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(fake_api.errors.count, "error") %> prohibited this fake_api from being saved:</h2>
+<%= form_for @fake_api, :html => { :class => "form-horizontal fake_api" } do |f| %>
 
-      <ul>
-      <% fake_api.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+  <% if @fake_api.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@fake_api.errors.count, "error") %> prohibited this fake_api from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @fake_api.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :method %>
-    <%= form.text_field :method, id: :fake_api_method %>
+  <div class="form-group">
+    <%= f.label :method, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :method, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:method) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :uri, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :uri, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:uri) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :response, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :response, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:response) %>
   </div>
 
-  <div class="field">
-    <%= form.label :uri %>
-    <%= form.text_field :uri, id: :fake_api_uri %>
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                fake_apis_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :response %>
-    <%= form.text_field :response, id: :fake_api_response %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 <% end %>
