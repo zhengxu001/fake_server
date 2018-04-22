@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Action:</strong>
+  <%= @api.action %>
+</p>
+
+<p>
+  <strong>Uri:</strong>
+  <%= @api.uri %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @api.status %>
+</p>
+
+<p>
+  <strong>Response:</strong>
+  <%= @api.response %>
+</p>
+
+<%= link_to 'Edit', edit_api_path(@api) %> |
+<%= link_to 'Back', apis_path %>

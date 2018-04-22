@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Fake Apis</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Method</th>
+      <th>Uri</th>
+      <th>Response</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fake_apis.each do |fake_api| %>
+      <tr>
+        <td><%= fake_api.method %></td>
+        <td><%= fake_api.uri %></td>
+        <td><%= fake_api.response %></td>
+        <td><%= link_to 'Show', fake_api %></td>
+        <td><%= link_to 'Edit', edit_fake_api_path(fake_api) %></td>
+        <td><%= link_to 'Destroy', fake_api, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Fake Api', new_fake_api_path %>

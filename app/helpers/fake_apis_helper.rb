@@ -1,0 +1,2 @@
+module FakeApisHelper
+end

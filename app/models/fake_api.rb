@@ -1,0 +1,2 @@
+class FakeApi < ApplicationRecord
+end

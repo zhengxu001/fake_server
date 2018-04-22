@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Method:</strong>
+  <%= @fake_api.method %>
+</p>
+
+<p>
+  <strong>Uri:</strong>
+  <%= @fake_api.uri %>
+</p>
+
+<p>
+  <strong>Response:</strong>
+  <%= @fake_api.response %>
+</p>
+
+<%= link_to 'Edit', edit_fake_api_path(@fake_api) %> |
+<%= link_to 'Back', fake_apis_path %>
