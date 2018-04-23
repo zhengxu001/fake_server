@@ -81,6 +81,8 @@ class FakeApisController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def fake_api_params
+      prefix = current_user.name || "fake"
+      params[:uri] = File.join(prefix, params[:uri]).sub(/^\//, '')
       params.require(:fake_api).permit(:method, :uri, :response)
     end
 end
