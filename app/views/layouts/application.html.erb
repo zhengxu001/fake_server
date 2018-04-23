@@ -4,13 +4,18 @@
     <title>FakeServer</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application'%>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <ul class="hmenu">
+      <%= render 'devise/menu/registration_items' %>
+      <%= render 'devise/menu/login_items' %>
+    </ul>
     <%= yield %>
-       <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
   </body>
 </html>
+
