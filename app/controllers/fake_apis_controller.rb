@@ -4,7 +4,11 @@ class FakeApisController < ApplicationController
   # GET /fake_apis
   # GET /fake_apis.json
   def index
-    @fake_apis = FakeApi.all
+    if user_signed_in?
+      @fake_apis = FakeApi.where(user_id: current_user.id) || []
+    else
+      @fake_apis = FakeApi.all
+    end
   end
 
   # GET /fake_apis/1
@@ -25,7 +29,9 @@ class FakeApisController < ApplicationController
   # POST /fake_apis.json
   def create
     @fake_api = FakeApi.new(fake_api_params)
-
+    if user_signed_in?
+      @fake_api.user = current_user
+    end
     respond_to do |format|
       if @fake_api.save
         format.html { redirect_to @fake_api, notice: 'Fake api was successfully created.' }
