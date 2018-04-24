@@ -22,3 +22,13 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+### ToDo
+- [ ] Email Server
+- [ ] Registry Confirmation
+- [ ] Password Reset
+- [ ] Profile Page Refactor
+
+
+
