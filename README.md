@@ -29,6 +29,9 @@ Things you may want to cover:
 - [ ] Registry Confirmation
 - [ ] Password Reset
 - [ ] Profile Page Refactor
+- [ ] Check the response format and request body format
+- [ ] Support Body for Post and Put
+- [ ] Share url within Organization
 
 
 

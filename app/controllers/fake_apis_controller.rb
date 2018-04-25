@@ -69,7 +69,7 @@ class FakeApisController < ApplicationController
 
   def fake_api
     verb = request.request_method
-    @api = FakeApi.find_by(method: verb, uri: params[:path])
+    @api = FakeApi.find_by(method: verb.downcase, uri: params["path"])
     render json: @api.response
   end
 
