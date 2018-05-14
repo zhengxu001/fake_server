@@ -1,120 +1,38 @@
 # Fake Server
-
-A fake server that can allow users create, manage and share APIs, which can be used for API integration testing and API Docum management.
+A fake server that can allow users create, manage and share APIs, which can be used for API integration testing and API Document Management.
 
 ## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+Fake Server allows anyone — be it your development team or your end consumers — to create, visualize and interact with the API’s resources without having any of the implementation logic in place. It’s automatically generated from input, with the visual documentation making it easy for backend implementation and client side consumption.
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+* Ruby version: 2.4.0
 
-```
-Give examples
-```
+* Configuration: Set up your database information in `config/database.yml`
 
+* Database creation: `rake db:create`
+
+* Database initialization `rake db:migrate`
+
+* Test: **Pending**
 ### Installing
 
-A step by step series of examples that tell you have to get a development env running
-
-Say what the step will be
+A step by step series of examples that you can run this application locally
 
 ```
 git clone
 bundle install
+rake db:create
+rake db:migrate
+rails s
 ```
 
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
+Open `http://localhost:3000/` you will find your application is running on 3000 port.
 
 ## Deployment
+This application has been deployed on Heroku. Please refer to https://guarded-shore-13048.herokuapp.com/ for more details. At the mean while, more features are under development. See ToDo
 
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
-## Authors
-
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
-
-
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-### ToDo
+## ToDo
 - [ ] Email Server
 - [ ] Registry Confirmation
 - [ ] Password Reset
@@ -124,5 +42,5 @@ Things you may want to cover:
 - [ ] Share url within Organization
 - [ ] Support Multiple Project
 
-
-
+## License
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
